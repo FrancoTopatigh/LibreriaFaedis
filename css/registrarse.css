@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    color: white;
+    background-color: #190a12;
+    font-family: "Montserrat", serif;
+    padding: 21px 18px;
+}
+
+.header-registrarse{
+    display: flex;
+    justify-content: space-around;
+}
+
+.header-registrarse a{
+    text-decoration: none;
+    color: white;
+}
+
+.header-registrarse a:hover{
+    color: #f1d3ab;
+}
+
+h1{
+    font-size: 1.5rem;
+    font-weight: bold; 
+}

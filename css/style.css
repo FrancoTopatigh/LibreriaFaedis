@@ -46,6 +46,15 @@ header{
     color: #f1d3ab;
 }
 
+.sign-up a{
+    text-decoration: none;
+    color: white;
+}
+
+.sign-up a:hover{
+    color: #f1d3ab;
+}
+
 .header-bottom{
     background-color: #301629;
     padding: 12px 8px;
