@@ -77,6 +77,10 @@ header{
     color: #f1d3ab;
 }
 
+header div i{
+    font-size: 30px;
+    margin: 0px 8px;
+}
 
 /* MAIN - PRODUCTS */
 
@@ -116,9 +120,11 @@ header{
     text-decoration: none;
 }
 
+/* FOOTER */
+
 #footer{
     color: white;
-    background-color: black;
+    background-color: #190a12;
     margin: 0 auto;
     font-family: "Montserrat", serif;
 }
@@ -139,3 +145,11 @@ header{
     color: #f1d3ab;
 }
 
+.footer-container i{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    gap: 20px;
+    font-size: 25px;
+    margin-top: 10px;
+}

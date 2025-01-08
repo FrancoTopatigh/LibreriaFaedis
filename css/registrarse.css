@@ -123,6 +123,11 @@ form h3{
     text-decoration: underline;
 }
 
+#i-home{
+    font-size: 18px;
+    margin-left: 10px;
+}
+
 /* FOOTER */
 
 #footer{
@@ -146,4 +151,13 @@ form h3{
 
 .footer-container p:hover{
     color: #f1d3ab;
+}
+
+.footer-container i{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    gap: 20px;
+    font-size: 25px;
+    margin-top: 10px;
 }
