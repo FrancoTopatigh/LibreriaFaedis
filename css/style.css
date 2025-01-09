@@ -91,7 +91,7 @@ header div i{
     margin-bottom: 20px;
 }
 
-.products{
+#libros-container{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
