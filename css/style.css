@@ -114,10 +114,29 @@ header div i{
 
 .box-products p{
     margin-bottom: 2.5px;
+    font-family: 'Montserrat', serif;
 }
 
 .box-products a{
     text-decoration: none;
+}
+
+#btn-fav{
+    border: none;
+    background-color: white;
+    font-size: 1.1em;
+    margin: 8px 0;
+    padding: 4px;
+    display: block;
+    margin: auto;
+}
+
+#btn-fav{
+    cursor: pointer;
+}
+
+#btn-fav:hover{
+    color: #e25858;
 }
 
 /* FOOTER */

@@ -38,12 +38,72 @@ function mostrarLibros(librosParaMostrar){
                 <p>${libro.titulo}</p>
                 <p>${libro.autor}</p>
                 <p>$${libro.precio}</p>
-                <p id="btn" onclick="marcarFavorito(${libro.id})">&#10084</p>
+                <button type="button" id="btn-fav" data-id="${libro.id}">&#10084</button>
                 <a href="#">Ver más</a>
             </div>`;
     });
     document.getElementById('libros-container').innerHTML = acumulador;
 }
 
-console.log(document.getElementById('libros-container'));
+
+const librosContainer = document.getElementById('libros-container');
+
+librosContainer.addEventListener("click", (event) => {
+    if(event.target && event.target.matches("button#btn-fav")){
+        const libroId = Number(event.target.getAttribute("data-id"));
+        // console.log(`Libro con ID ${libroId} fue agregado a favoritos`);
+
+        Toastify({
+            text: "Libro agregado a favoritos!",
+            duration: 4000,
+            destination: "https://github.com/apvarun/toastify-js", // cambiar por pag de favoritos cuando este hecha
+            newWindow: true,
+            close: true,
+            gravity: "bottom", 
+            position: "right", 
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#301629",
+              color: "#f1d3ab",
+              fontFamily: "Montserrat",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+
+
+        agregarAFavoritos(libroId);
+    }
+})
+
+let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+
+function agregarAFavoritos(id) {
+    if (!favoritos.includes(id)) {
+        favoritos.push(id);
+        console.log(`Libro con ID ${id} agregado a favoritos`);
+    } else {
+        favoritos = favoritos.filter((favId) => favId !== id);
+        console.log(`Libro con ID ${id} fue eliminado de favoritos`);
+    }
+
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+
+    const btn = document.querySelector(`button[data-id="${id}"]`);
+    if (btn) {
+        if (favoritos.includes(id)) {
+            btn.classList.add("fav-active");
+        } else {
+            btn.classList.remove("fav-active");
+        }
+    }
+}
+
+
+// const btnFavoritos = document.getElementById('btn-fav');
+
+// btnFavoritos.addEventListener("click", () => {
+   
+// })
+
 
