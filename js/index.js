@@ -51,7 +51,6 @@ const librosContainer = document.getElementById('libros-container');
 librosContainer.addEventListener("click", (event) => {
     if(event.target && event.target.matches("button#btn-fav")){
         const libroId = Number(event.target.getAttribute("data-id"));
-        // console.log(`Libro con ID ${libroId} fue agregado a favoritos`);
 
         Toastify({
             text: "Libro agregado a favoritos!",
@@ -100,10 +99,5 @@ function agregarAFavoritos(id) {
 }
 
 
-// const btnFavoritos = document.getElementById('btn-fav');
-
-// btnFavoritos.addEventListener("click", () => {
-   
-// })
 
 

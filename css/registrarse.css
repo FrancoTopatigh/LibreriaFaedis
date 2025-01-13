@@ -131,6 +131,12 @@ form h3{
     margin-left: 10px;
 }
 
+.error{
+    font-family: "Montserrat", serif;;
+    color: red;
+    font-size: 13px
+}
+
 /* FOOTER */
 
 #footer{
