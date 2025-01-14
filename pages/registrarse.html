@@ -14,7 +14,7 @@
 
 
     <!-- <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css"> -->
-
+    <link rel="stylesheet" href="sweetalert2.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Libreria Faedis - Acceder</title>
@@ -44,60 +44,44 @@
         
         <form action="#" method="post" id="form-registrarse">
             <h3>Formulario de registro</h3>
-
+        
             <div class="form-group">
                 <input type="text" placeholder="Nombre" class="form-control" id="nombre-registro">
                 <input type="text" placeholder="Apellido" class="form-control" id="apellido-registro">
             </div>
-
-            <div id="mensaje-nombre-apellido" class="error">
-
-            </div>
-
+        
+            <div id="mensaje-nombre-apellido" class="error"></div>
+        
             <div class="form-wrapper">
                 <input type="text" placeholder="Email" class="form-control" id="mail-registro">
-
-                <div id="mensaje-mail" class="error">
-
-                </div>
-
-
+                <div id="mensaje-mail" class="error"></div>
             </div>
-
+        
             <div class="form-wrapper">
                 <select name="Genero" id="genero-registro" class="form-control">
-                    <option value disabled selected>Genero</option>
+                    <option value="" disabled selected>Genero</option>
                     <option value="masculino">Masculino</option>
                     <option value="femenino">Femenino</option>
                     <option value="no-binario">No binario</option>
                     <option value="otro">Otro</option>
                 </select>
-                <i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+                <div id="mensaje-genero" class="error"></div>
             </div>
-
-
+        
             <div class="form-wrapper">
                 <input type="password" placeholder="Contraseña" class="form-control" id="contrasenia-registro">
             </div>
-
-            <div id="mensaje-contrasenia" class="error">
-
-            </div>
-
+            <div id="mensaje-contrasenia" class="error"></div>
+        
             <div class="form-wrapper">
                 <input type="password" placeholder="Confirmar contraseña" class="form-control" id="confirmar-contrasenia-registro">
             </div>
-
-            <div id="mensaje-confirmar-contrasenia" class="error">
-                
-            </div>
-
-            <input type="submit" value="Registrarse" class="btn-registrarse" disabled>
-
-            <h5 class="iniciar-sesion">Iniciar sesion</h5>
-
-
+            <div id="mensaje-confirmar-contrasenia" class="error"></div>
+        
+            <input type="submit" value="Registrarse" class="btn-registrarse">
+            <h5 class="iniciar-sesion">Iniciar sesión</h5>
         </form>
+        
     </div>
 
 
@@ -111,5 +95,6 @@
     </footer>
 
 <script src="../js/registrarse.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

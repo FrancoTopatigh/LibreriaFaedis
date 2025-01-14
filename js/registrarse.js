@@ -1,105 +1,72 @@
-let formRegistrarse = document.querySelector("#form-registrarse");
-let mensajeNombreApellido = document.querySelector("#mensaje-nombre-apellido");
-let mensajeMail = document.querySelector("#mensaje-mail");
-let mensajeContrasenia = document.querySelector("#mensaje-contrasenia");
-let mensajeConfirmarContrasenia = document.querySelector("#mensaje-confirmar-contrasenia");
-let btnRegistro = document.querySelector(".btn-registrarse");
-let nombreRegistro = document.querySelector("#nombre-registro");
-let apellidoRegistro = document.querySelector("#apellido-registro");
-let mailRegistro = document.querySelector("#mail-registro");
-let contraseniaRegistro = document.querySelector("#contrasenia-registro");
-let confirmarContraseniaRegistro = document.querySelector("#confirmar-contrasenia-registro");
+document.addEventListener("DOMContentLoaded", () => {
+    const formRegistrarse = document.getElementById("form-registrarse");
 
-nombreRegistro.addEventListener("input", desactivarBoton);
-apellidoRegistro.addEventListener("input", desactivarBoton);
-mailRegistro.addEventListener("input", desactivarBoton);
-contraseniaRegistro.addEventListener("input", desactivarBoton);
-confirmarContraseniaRegistro.addEventListener("input", desactivarBoton);
-
-desactivarBoton();
-
-function desactivarBoton() {
-    if (
-        nombreRegistro.value.trim() === "" ||
-        apellidoRegistro.value.trim() === "" ||
-        mailRegistro.value.trim() === "" ||
-        contraseniaRegistro.value.trim() === "" ||
-        confirmarContraseniaRegistro.value.trim() === ""
-    ) {
-        btnRegistro.disabled = true;
-    } else {
-        btnRegistro.disabled = false;
-    }
-}
-
-formRegistrarse.addEventListener("submit", (e) => {
-    e.preventDefault();
-    validacionRegistrarse();
+    formRegistrarse.addEventListener("submit", (event) => {
+        if (!validarFormulario()) {
+            event.preventDefault();
+        }
+    });
 });
 
-function validacionRegistrarse() {
-    limpiarErrores();
-    let error = false;
+function validarFormulario() {
+    const nombre = document.getElementById("nombre-registro").value.trim();
+    const apellido = document.getElementById("apellido-registro").value.trim();
+    const mail = document.getElementById("mail-registro").value.trim();
+    const genero = document.getElementById("genero-registro").value;
+    const contrasenia = document.getElementById("contrasenia-registro").value;
+    const confirmarContrasenia = document.getElementById("confirmar-contrasenia-registro").value;
 
-    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const regexContrasenia = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,12}/;
+    const mensajeErrorNombreApellido = document.getElementById("mensaje-nombre-apellido");
+    const mensajeErrorMail = document.getElementById("mensaje-mail");
+    const mensajeErrorGenero = document.getElementById("mensaje-genero");
+    const mensajeErrorContrasenia = document.getElementById("mensaje-contrasenia");
+    const mensajeErrorConfirmarContrasenia = document.getElementById("mensaje-confirmar-contrasenia");
 
-    if (nombreRegistro.value === "" || apellidoRegistro.value === "") {
-        error = true;
-        mostrarError(mensajeNombreApellido, "Nombre y/o apellido inválido. Por favor, completar.");
-        nombreRegistro.focus();
+    mensajeErrorNombreApellido.textContent = "";
+    mensajeErrorMail.textContent = "";
+    mensajeErrorGenero.textContent = "";
+    mensajeErrorContrasenia.textContent = "";
+    mensajeErrorConfirmarContrasenia.textContent = "";
+
+    let esValido = true;
+
+    if (nombre === "" || apellido === "") {
+        mensajeErrorNombreApellido.textContent = "Por favor, completar nombre y/o apellido";
+        esValido = false;
+        document.getElementById("nombre-registro").focus();
     }
 
-    if (mailRegistro.value === "" || !regexCorreo.test(mailRegistro.value)) {
-        error = true;
-        mostrarError(mensajeMail, "Correo electrónico inválido.");
-        mailRegistro.focus();
+    if (mail === "" || !mail.includes("@") || !mail.includes(".")) {
+        mensajeErrorMail.textContent = "Por favor, ingresar un correo válido";
+        esValido = false;
+        document.getElementById("mail-registro").focus();
     }
 
-    if (contraseniaRegistro.value === "" || !regexContrasenia.test(contraseniaRegistro.value)) {
-        error = true;
-        mostrarError(mensajeContrasenia, "Contraseña inválida.");
-        contraseniaRegistro.focus();
+    if (genero === "") {
+        mensajeErrorGenero.textContent = "Por favor, seleccionar una opción";
+        esValido = false;
+        document.getElementById("genero-registro").focus();
     }
 
-    if (confirmarContraseniaRegistro.value !== contraseniaRegistro.value) {
-        error = true;
-        mostrarError(mensajeConfirmarContrasenia, "Las contraseñas no coinciden.");
-        confirmarContraseniaRegistro.focus();
+    if (contrasenia === "" || contrasenia.length < 8) {
+        mensajeErrorContrasenia.textContent = "Por favor, ingresar una contraseña válida (mínimo 8 caracteres)";
+        esValido = false;
+        document.getElementById("contrasenia-registro").focus();
     }
 
-    if (!error) {
-        formRegistrarse.submit();
+    if (confirmarContrasenia !== contrasenia) {
+        mensajeErrorConfirmarContrasenia.textContent = "Las contraseñas no coinciden";
+        esValido = false;
+        document.getElementById("confirmar-contrasenia-registro").focus();
+    }
+
+    if (esValido) {
+        Swal.fire({
+            title: "Registro exitoso!",
+            icon: "success",
+          });
+        return true;
+    } else {
+        return false;
     }
 }
-
-function limpiarErrores() {
-    mensajeNombreApellido.innerHTML = "";
-    mensajeMail.innerHTML = "";
-    mensajeContrasenia.innerHTML = "";
-    mensajeConfirmarContrasenia.innerHTML = "";
-}
-
-function mostrarError(container, message) {
-    let mensajeError = document.createElement("p");
-    mensajeError.textContent = message;
-    container.appendChild(mensajeError);
-}
-
-
-
-
-// console.log({
-//     formRegistrarse,
-//     mensajeNombreApellido,
-//     mensajeMail,
-//     mensajeContrasenia,
-//     mensajeConfirmarContrasenia,
-//     btnRegistro,
-//     nombreRegistro,
-//     apellidoRegistro,
-//     mailRegistro,
-//     contraseniaRegistro,
-//     confirmarContraseniaRegistro,
-// });
-
