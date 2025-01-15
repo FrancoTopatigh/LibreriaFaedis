@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Libreria Faedis - Iniciar sesion</title>
+    <link rel="stylesheet" href="../css/iniciarsesion.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-registrarse">
+
+            <div class="title">
+                <a href="../index.html"><h1>Libreria Faedis</h1></a>
+            </div>
+
+            <div class="btn-volver">
+                <a href="../index.html">Volver al inicio<i class='bx bx-home' id="i-home" ></i></a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <div class="form-container">
+        <div class="img-form">
+            <img src="../img/borges-iniciarsesion.jpg" alt="Jorge Luis Borges">
+        </div>
+
+        <form action="#" method="post" id="form-iniciarsesion">
+            <h3>Iniciar Sesión</h3>
+
+            <div class="form-group">
+                <input type="text" placeholder="Mail" class="form-control" id="mail-iniciar-sesion">
+                <span id="mensaje-mail-iniciar-sesion" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="password" placeholder="Contraseña" class="form-control" id="contrasenia-iniciar-sesion">
+                <span id="mensaje-contrasenia-iniciar-sesion" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="checkbox-iniciar-sesion">Mantener sesión iniciada
+            </div>
+
+            <input type="submit" value="Iniciar sesión" class="btn-iniciar-sesion">
+            <h5 class="link-registrarse"><a href="registrarse.html">Registrarme</a></h5>
+
+        </form>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <p class="footer-contact">Contacto<i class='bx bxs-envelope' ></i></p>
+            <p class="footer-locales">Locales<i class='bx bxs-store' ></i></p>
+            <p class="footer-help">Ayuda<i class='bx bxs-help-circle' ></i></p>
+            <p class="footer-redes">Redes Sociales<i class='bx bxl-instagram-alt' ></i></p>
+        </div>
+    </footer>
+
+
+    
+</body>
+</html>

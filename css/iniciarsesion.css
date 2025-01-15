@@ -58,7 +58,7 @@ h1{
 }
 
 form{
-    width: 50%;
+    width: 40%;
     padding: 40px;
 }
 
@@ -67,6 +67,7 @@ form h3{
     font-weight: bold;
     margin-bottom: 15px;
     color: #333;
+    text-align: center;
 }
 
 .form-group{
@@ -99,7 +100,15 @@ form h3{
     outline: none;
 }
 
-.btn-registrarse{
+#checkbox-iniciar-sesion{
+    color: #333;
+}
+
+.form-group input{
+    font-family: 10px;
+}
+
+.btn-iniciar-sesion{
     width: 100%;
     padding: 12px;
     background-color: #333;
@@ -110,11 +119,11 @@ form h3{
     cursor: pointer;
 }
 
-.btn-register:hover{
+.btn-iniciar-sesion:hover{
     background-color: #555;
 }
 
-.iniciar-sesion{
+.link-registrarse{
     text-align: center;
     margin-top: 20px;
     font-size: 0.9rem;
@@ -122,7 +131,7 @@ form h3{
     cursor: pointer;
 }
 
-.iniciar-sesion:hover {
+.link-registrarse:hover {
     text-decoration: underline;
 }
 
@@ -145,6 +154,10 @@ form h3{
     background-color: black;
     margin: 0 auto;
     font-family: "Montserrat", serif;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-container{
