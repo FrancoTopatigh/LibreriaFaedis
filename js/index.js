@@ -48,31 +48,33 @@ function mostrarLibros(librosParaMostrar){
 
 const librosContainer = document.getElementById('libros-container');
 
+
 librosContainer.addEventListener("click", (event) => {
-    if(event.target && event.target.matches("button#btn-fav")){
+    if (event.target && event.target.matches("button#btn-fav")) {
         const libroId = Number(event.target.getAttribute("data-id"));
+        const esFavorito = favoritos.includes(libroId);
 
         Toastify({
-            text: "Libro agregado a favoritos!",
+             text: esFavorito 
+                ? "Libro eliminado de favoritos!" 
+                : "Libro agregado a favoritos!",
             duration: 4000,
-            destination: "https://github.com/apvarun/toastify-js", // cambiar por pag de favoritos cuando este hecha
+            destination: "https://github.com/apvarun/toastify-js", // Cambiar por pag de favoritos cuando esté hecha
             newWindow: true,
             close: true,
             gravity: "bottom", 
             position: "right", 
-            stopOnFocus: true, // Prevents dismissing of toast on hover
+            stopOnFocus: true, 
             style: {
               background: "#301629",
               color: "#f1d3ab",
               fontFamily: "Montserrat",
             },
-            onClick: function(){} // Callback after click
-          }).showToast();
-
-
+        }).showToast();
         agregarAFavoritos(libroId);
     }
-})
+});
+
 
 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
@@ -98,6 +100,10 @@ function agregarAFavoritos(id) {
     }
 }
 
+function buscarLibros(){
+    let input = document.getElementById("search-bar").value.toLowerCase();
+    const resultados = libros.filter(libro => libro.titulo.toLowerCase().includes(input) || libro.autor.toLowerCase().includes(input) || libro.descripcion?.toLowerCase().includes(input));
+    mostrarLibros(resultados);
+}
 
-
-
+document.getElementById("search-bar").addEventListener("input", buscarLibros);
