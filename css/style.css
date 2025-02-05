@@ -176,3 +176,104 @@ header div i{
 .fav-active{
     color: red;
 }
+
+/* BREAKPOINT */
+
+@media screen and (max-width: 767px){
+    h1{
+        font-size: 1.2rem; 
+        margin-left: 8px;
+        margin-top: 4px;
+    }
+    .search-bar input{
+        padding: 6px;
+        font-size: 0.9rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+    }
+    .user-options div a{
+        font-size: 4px;
+    }
+    #libros-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .box-products{
+        border: 1px solid black;
+        text-align: center;
+        width: 155px;
+        padding: 18px;
+    }
+    footer p, footer i{
+        font-size: 13px;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    h1{
+        font-size: 1.5rem; 
+        margin-left: 8px;
+    }
+    .search-bar input{
+        padding: 6px;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+    }
+    .user-options div a{
+        font-size: 6px;
+    }
+    #libros-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .box-products{
+        border: 1px solid black;
+        text-align: center;
+        width: 150px;
+        padding: 20px;
+        margin: auto;
+    }
+    footer p, footer i{
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+        .container {
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        #libros-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 40px 0px;
+        }
+    
+        .box-products {
+            border: 1px solid black;
+            text-align: center;
+            width: auto;
+            padding: 20px;
+        }
+    
+        .search-bar input {
+            padding: 6px;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+        }
+    
+        .user-options div {
+            cursor: pointer;
+        }
+    
+        .user-options div:hover {
+            color: #f1d3ab;
+        }  
+}
