@@ -38,7 +38,14 @@ function mostrarLibros(librosParaMostrar){
                 <p>${libro.titulo}</p>
                 <p>${libro.autor}</p>
                 <p>$${libro.precio}</p>
+
+                <div class="button-group">
                 <button type="button" id="btn-fav" data-id="${libro.id}">&#10084</button>
+                <button type="button" id="btn-cart" data-id="${libro.id}">
+                    <i class='bx bx-shopping-bag'></i>
+                </button>
+                </div>
+
                 <a href="#">Ver más</a>
             </div>`;
     });
@@ -51,8 +58,8 @@ const librosContainer = document.getElementById('libros-container');
 
 librosContainer.addEventListener("click", (event) => {
     if (event.target && event.target.matches("button#btn-fav")) {
-        const libroId = Number(event.target.getAttribute("data-id"));
-        const esFavorito = favoritos.includes(libroId);
+        const libroFavId = Number(event.target.getAttribute("data-id"));
+        const esFavorito = favoritos.includes(libroFavId);
 
         Toastify({
              text: esFavorito 
@@ -71,13 +78,35 @@ librosContainer.addEventListener("click", (event) => {
               fontFamily: "Montserrat",
             },
         }).showToast();
-        agregarAFavoritos(libroId);
+        agregarAFavoritos(libroFavId);
     }
 });
 
+librosContainer.addEventListener("click", (event) => {
+    if(event.target && event.target.matches("#btn-cart, #btn-cart *")){
+        const libroCarritoId = Number(event.target.getAttribute("data-id"));
+
+        Toastify({
+            text: "Libro agregado al carrito!",
+           duration: 4000,
+           destination: "https://github.com/apvarun/toastify-js", // Cambiar por pag de favoritos cuando esté hecha
+           newWindow: true,
+           close: true,
+           gravity: "bottom", 
+           position: "right", 
+           stopOnFocus: true, 
+           style: {
+             background: "#301629",
+             color: "#f1d3ab",
+             fontFamily: "Montserrat",
+           },
+       }).showToast();
+       agregarACarrito(libroCarritoId);
+    }
+})
+
 
 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-
 
 function agregarAFavoritos(id) {
     if (!favoritos.includes(id)) {
@@ -99,6 +128,21 @@ function agregarAFavoritos(id) {
         }
     }
 }
+
+/*  NUEVA FUNCION - CARRITO        */
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function agregarACarrito(id){
+    if(!cart.includes(id)){
+        cart.push(id);
+        console.log(`Libro con ID ${id} fue agregado a carrito`);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart))
+
+}
+
 
 function buscarLibros(){
     let input = document.getElementById("search-bar").value.toLowerCase();
