@@ -20,10 +20,10 @@ const libro4 = new Libro(4, "El arte de amar", "Erich Fromm", 24999, "Sociedad y
 const libro5 = new Libro(5, "El extranjero", "Albert Camus", 18999, "Ficcion y Filosofia", "Debolsillo", 128, "Tapa Blanda", "./img/elextranjero.jpg", "Publicado en 1942, cuando la Segunda Guerra Mundial asolaba Europa, El extranjero retrata la vida en Argel de un joven oficinista llamado Meursault. Sus días transcurren entre personajes turbios y rutinas primarias, sin que lo perturben siquiera la muerte de su madre o el amor de una muchacha. Pero, cuando comete un asesinato impulsivo, Meursault descubre que la sociedad está dispuesta a condenarlo no solo por ese acto aberrante, sino por su vida ajena a todo. Narrada en un estilo a la vez parco y lírico, la novela captura con maestría el absurdo del hombre moderno, un extraño que no encuentra el sentido en su paso por el mundo");
 const libro6 = new Libro(6, "Siddhartha", "Hermann Hesse", 21999, "Ficcion y Espiritualidad", "Debolsillo", 224, "Tapa Blanda", "./img/siddhartha2.jpg", "Esta novela, ambientada en la India tradicional, relata la vida de Siddhartha, un hombre para quien el camino de la verdad pasa por la renuncia y la comprensión de la unidad que subyace en todo lo existente. En sus páginas, el autor ofrece todas las opciones espirituales del hombre. Hermann Hesse buceó en el alma de Oriente a fin de aportar sus aspectos positivos a nuestra sociedad");
 const libro7 = new Libro(7, "La metamorfosis", "Franz Kafka", 17999, "Ficcion", "Planeta Lector", 93, "Tapa Blanda", "./img/lametamorfosis.webp", "Gregorio Samsa se despierta un día convertido en insecto. Su cuerpo se ha transformado y descubre que desde aquel momento dispone de antenas, muchas patitas... Samsa piensa que se trata de un sueño , pero se da cuenta de que todo lo que está ocurriendo es realidad");
-const libro8 = new Libro(8, "El Aleph", "Jorge Luis Borges", 23999, "Ficcion Literaria", "Debolsillo", 216, "Tapa Blanda", "./img/elaleph.jpg");
-const libro9 = new Libro(9, "Anna Karenina", "Lev Tolstoi", 34630, "Ficcion Clasica", "Pluton Ediciones", 900, "Tapa Dura", "./img/annakarenina.jpg", "León Tolstói (1828-1910) es reconocido como uno de los escritores más importantes de la novela rusa y de la literatura mundial. Nacido en una antigua familia de la nobleza, sus obras constituyen un fiel reflejo de la sociedad rusa de la época, convirtiéndolo en uno de los representantes más reconocidos del realismo. En “Anna Karenina” (que empezó a publicarse como un folletín en 1875, y se publicaría por primera vez entera en 1877), Tolstói narra la relación adúltera entre Anna Karenina, casada con un alto funcionario del gobierno, y el conde Vronsky, vínculo a través del cual el escritor retrata la doble moral y los antivalores de un entorno que no sanciona con la misma dureza moral al hombre y a la mujer. Además, muestra la profunda desigualdad social entre la élite y el campesinado, y la búsqueda de la felicidad del ser humano, que alcanza tras una metamorfosis espiritual");
-const libro10 = new Libro(10, "Meditaciones", "Marco Aurelio", 19999, "Filosofia Estoica", "Poseidon", 210, "Tapa Blanda", "./img/meditacionesmarcoaurelio.jpg", "Marco Aurelio gobernó el Imperio Romano entre 161 y 180 d. C., durante el apogeo del poder imperial. Su reinado estuvo marcado por numerosos conflictos militares y la expansión imperial. A pesar de estos conflictos, el imperio prosperó en relativa paz y prosperidad bajo su gobierno. Marco Aurelio reinó como un rey filósofo, practicó el estoicismo y escribió sobre sus propios pensamientos y observaciones en sus diarios. Meditaciones nunca tuvo la intención de ser un texto público. En cambio, Marco Aurelio se dedicó a crear un examen transparente de su propia vida, así como un recurso filosófico personal destinado a ayudar al gobernante a seguir lo que él creía que era el camino moral correcto. Sin más audiencia que él mismo para escribir, elaboró un examen sorprendentemente honesto y hermoso del pensamiento y la ideología en la Antigua Roma y en toda su esfera de influencia");
-const libro11 = new Libro(11, "El retrato de Dorian Grey", "Oscar Wilde", 19010, "Ficcion Clasica", "Pluton Ediciones", 320, "Tapa Dura", "./img/retratodoriangrey.jpg", "El Retrato de “Dorian Gray” es la novela más famosa del escritor irlandés Oscar Wilde (1854-1900). Un joven llamado Dorian Gray es seducido por el hedonismo de su nuevo círculo social y empieza a vivir la vida de un libertino en constante búsqueda del placer después de adquirir un impresionante y misterioso retrato de sí mismo, pintado por un amigo. La novela explora temas filosóficos tan complejos como la duplicidad del alma humana y la reverencia por la belleza y el placer. La novela causó gran revuelo en los críticos y lectores británicos de la época, por su supuesta inmoralidad e indecencia y despertó en Wilde una defensa furiosa del proceso creativo y la importancia de la libertad en la expresión artístico");
+const libro8 = new Libro(8, "El Aleph", "Jorge Luis Borges", 23999, "Ficcion Literaria", "Debolsillo", 216, "Tapa Blanda", "./img/elaleph.jpg"," El cuento El Aleph, publicado por primera vez en la revista Sur en 1945 y que en 1949 dio nombre al libro, aborda uno de los temas recurrentes en la literatura de Borges: el infinito. Porque en esa esfera resplandeciente confluyen de un modo asombroso todos los tiempos y todos los espacios");
+const libro9 = new Libro(9, "Anna Karenina", "Lev Tolstoi", 34630, "Ficcion Clasica", "Pluton Ediciones", 900, "Tapa Dura", "./img/annakarenina.jpg", "Anna Karenina es, junto con la monumental Guerra y paz, una de las obras clave Lev Tolstoi, en la que vemos todas las señas de identidad del gran realismo ruso: fina crítica social y multitud de personajes con una profundidad psicológica asombrosa. Las desventuras de Anna Karenina y su afán por integrarse en una sociedad hipócrita que la margina por adúltera, pero perdona los desmanes de su amante, nos hacen reflexionar sobre la invisibilización de la mujer a la par que nos ofrecen un fresco monumental de la Rusia decimonónica y todas sus contradicciones");
+const libro10 = new Libro(10, "Meditaciones", "Marco Aurelio", 19999, "Filosofia Estoica", "Poseidon", 210, "Tapa Blanda", "./img/meditacionesmarcoaurelio.jpg", "Las Meditaciones del emperador Marco Aurelio fueroncompuestas durante los descansos de sus actividadespoliticas y belicas, y tenia el proposito de recordarle a las maximas fundamentales del estoicismo , de ayudarle a aplicar estas en su vida diaria , para desviarse de su objetivo fundamental : Ser mejor persona");
+const libro11 = new Libro(11, "El retrato de Dorian Grey", "Oscar Wilde", 19010, "Ficcion Clasica", "Pluton Ediciones", 320, "Tapa Dura", "./img/retratodoriangrey.jpg", "El retrato de Dorian Gray destaca no sólo por ser su única novela, sino también su trabajo más perdurable. Las desventuras de Dorian Gray, ese dandi paradigmático y ocurrente obsesionado con lo efímero, y su pánico a envejecer nos deparan la más genial y absorbente de las vueltas de tuerca que jamás se le hayan dado a la novela fáustica");
 const libro12 = new Libro(12, "El Banquete", "Platon", 29000, "Filosofia Griega", "Gredos", 144, "Tapa Blanda", "./img/elbanquete.jpg");
 
 
@@ -151,3 +151,34 @@ function buscarLibros(){
 }
 
 document.getElementById("search-bar").addEventListener("input", buscarLibros);
+
+
+librosContainer.addEventListener("click", (event) => {
+    if (event.target && event.target.matches("a")) {
+        event.preventDefault(); 
+
+        const libroId = Number(event.target.closest(".box-products").querySelector("button").getAttribute("data-id"));
+        const libroSeleccionado = libros.find((libro) => libro.id === libroId);
+
+        if (libroSeleccionado) {
+            const popup = new Popup({
+                id: `popup-libro-${libroSeleccionado.id}`,
+                title: `${libroSeleccionado.titulo} - $${libroSeleccionado.precio}`,
+                content: `
+                    <p><strong>Autor:</strong> ${libroSeleccionado.autor}</p>
+                    <p><strong>Género:</strong> ${libroSeleccionado.categoria}</p>
+                    <p><strong>Editorial:</strong> ${libroSeleccionado.editorial}</p>
+                    <p><strong>Páginas:</strong> ${libroSeleccionado.paginas}</p>
+                    <p><strong>Encuadernación:</strong> ${libroSeleccionado.encuadernacion}</p>
+                `,
+                titleColor: "rgb(3, 0, 4)",
+                titleMargin: "0",
+                backgroundColor: "white",
+            });
+
+            popup.show(); 
+        }
+    }
+});
+
+
